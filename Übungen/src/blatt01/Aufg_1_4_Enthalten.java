@@ -9,6 +9,8 @@ public class Aufg_1_4_Enthalten {
 
 	public static boolean alleEnthalten(long[] a1, long[] a2) {
 		long tmp = 0;
+		if(a1.length > a2.length)
+			return false;
 		for (long l1: a1)
 		{
 			for(long l2 : a2)
