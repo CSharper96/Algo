@@ -1,32 +1,48 @@
 package blatt01;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Aufg_1_2_Anagramme {
 
 	
-	public static boolean sindAnagramme(String s1, String s2) {
-		// TODO
-		// TODO
-		// TODO
-		// TODO
-		// TODO		
-		return false; 		// TODO
+	public static boolean sindAnagramme(String s1, String s2)
+	{
+		char[] word1 = setLowerCase(s1.replaceAll("[\\s]", "").toCharArray());
+		char[] word2 = setLowerCase(s2.replaceAll("[\\s]", "").toCharArray());
+		Arrays.sort(word1);
+		Arrays.sort(word2);
+		return Arrays.equals(word1, word2);
 	}
-	
+	private static char[] setLowerCase(char[] word)
+	{
+		char[] wordLowerCase = new char[word.length];
+		for(int length = 0; length < word.length; length++)
+		{
+			if(Character.isUpperCase(word[length]))
+				wordLowerCase[length] = Character.toLowerCase(word[length]);
+			else
+				wordLowerCase[length] = word[length];
+		}
+		return wordLowerCase;
+	}
 
 	private static Random rand = new Random();
 	
 	/**
-	 * Führt Tests und Laufzeitmessungen für die Anagrammprüfung durch
-	 * 
+	 * Fï¿½hrt Tests und Laufzeitmessungen fÃ¼r die AnagrammprÃ¼fung durch
+	 * N = 100 => 0,2769 ms
+	 * N = 1.000 => 1,0414 ms
+	 * N = 10.000 => 1,8409 ms
+	 * N = 100.000 => 6,5054 ms
+	 * N = 1.000.000 => 19,7028 ms
 	 */
 	public static void main(String[] args) {
 		simpleTests();
 		
-		String eingabe = JOptionPane.showInputDialog("maximale Länge für Anagrammtest:");
+		String eingabe = JOptionPane.showInputDialog("maximale LÃ¤nge fÃ¼r Anagrammtest:");
 		if (eingabe == null) {
 			System.out.println("Abgebrochen!");
 			return;
@@ -67,10 +83,10 @@ public class Aufg_1_2_Anagramme {
 
 
 	
-	/** Erzeugt einen String der angegebenen Länge aus zufällig gewählten Zeichen zwischen 'A' und 'z'
+	/** Erzeugt einen String der angegebenen LÃ¤nge aus zufÃ¼llig gewÃ¤hlten Zeichen zwischen 'A' und 'z'
 	 */
 	public static String erzeugeRandomString(int laenge) {
-		//Zeichenkette aus zufälligen Zeichen erzeugen
+		//Zeichenkette aus zufï¿½lligen Zeichen erzeugen
 		StringBuilder sb1 = new StringBuilder(laenge);
 		for (int i = 0; i < laenge; i++) {
 			char ch = (char) (rand.nextInt('z'-'A') + 'A');
@@ -79,16 +95,16 @@ public class Aufg_1_2_Anagramme {
 		return sb1.toString();
 	}
 	
-	/** Erzeugt zwei Strings der angegebenen Länge, die Anagramme sind */
+	/** Erzeugt zwei Strings der angegebenen LÃ¤nge, die Anagramme sind */
 	public static String[] erzeugeAnagramme(int laenge) {
 		String s1 = erzeugeRandomString(laenge);
 
 		//Permutation von s1 erzeugen
 		
-		//Zunächst Kopie erzeugen
+		//Zunï¿½chst Kopie erzeugen
 		StringBuilder sb2 = new StringBuilder(s1);
 		for (int j = 0; j <= laenge / 4; j++) {
-			//Zeichen an zwei zufällig gewählten Positionen
+			//Zeichen an zwei zufï¿½llig gewï¿½hlten Positionen
 			//vertauschen
 			int pos1 = rand.nextInt(laenge);
 			int pos2 = rand.nextInt(laenge);
@@ -98,20 +114,20 @@ public class Aufg_1_2_Anagramme {
 			sb2.setCharAt(pos2, tmp1);
 		}
 	
-		//beide Zeichenketten als Feld von zwei Strings zurück geben
+		//beide Zeichenketten als Feld von zwei Strings zurï¿½ck geben
 		String s2 = sb2.toString();
-		return new String[]{s1,s2};  //Feld mit s1 und s2 als Elementen zurückgeben
+		return new String[]{s1,s2};  //Feld mit s1 und s2 als Elementen zurï¿½ckgeben
 		
 	}
 	
-	/** Erzeugt zwei Strings der angegebenen Länge, die keine Anagramme sind */
+	/** Erzeugt zwei Strings der angegebenen LÃ¤nge, die keine Anagramme sind */
 	public static String[] erzeugeNonAnagramme(int laenge) {
 		String s1 = erzeugeRandomString(laenge);
 		
-		//Zunächst von s1 Kopie erzeugen
+		//Zunï¿½chst von s1 Kopie erzeugen
 		StringBuilder sb2 = new StringBuilder(s1);
 			
-		//letztes Zeichen verändern
+		//letztes Zeichen verï¿½ndern
 		int pos = sb2.length() - 1;
 		if (sb2.charAt(pos) == 'X') {
 			sb2.setCharAt(pos, 'a');
@@ -120,17 +136,17 @@ public class Aufg_1_2_Anagramme {
 			sb2.setCharAt(pos, 'X');
 		}
 		
-		//beide Zeichenketten als Feld von zwei Strings zurück geben
+		//beide Zeichenketten als Feld von zwei Strings zurï¿½ck geben
 		String s2 = sb2.toString();
-		return new String[]{s1,s2};  //Feld mit s1 und s2 als Elementen zurückgeben
+		return new String[]{s1,s2};  //Feld mit s1 und s2 als Elementen zurï¿½ckgeben
 		
 	}
 	
 	
-	/** Prüft, ob beide Strings s1 und s2 Anagramme sind und misst die Laufzeit für den Test */
+	/** PrÃ¼ft, ob beide Strings s1 und s2 Anagramme sind und misst die Laufzeit fÃ¼r den Test */
 	private static boolean testeAnagramme(String s1, String s2) {
-		System.out.println("Länge s1: " + s1.length());
-		System.out.println("Länge s2: " + s2.length());
+		System.out.println("Lï¿½nge s1: " + s1.length());
+		System.out.println("Lï¿½nge s2: " + s2.length());
 		
 		long tStart = System.nanoTime();
 		boolean res = sindAnagramme(s1, s2);
@@ -143,7 +159,7 @@ public class Aufg_1_2_Anagramme {
 	}
 	
 	
-	/** einige einfache Tests für Anagramme */
+	/** einige einfache Tests fÃ¼r Anagramme */
 	private static void simpleTests() {
 		System.out.println("LAMPE/PALME: " + sindAnagramme("LAMPE", "PALME"));
 		System.out.println("WIEN/WEIN: " + sindAnagramme("WIEN","WEIN"));

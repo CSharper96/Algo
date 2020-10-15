@@ -2,8 +2,8 @@ package blatt01;
 
 //JUnit 5 (Jupiter)
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 
 public class JuTest_Aufg_1_2_Anagramme {

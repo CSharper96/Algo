@@ -5,14 +5,14 @@ import java.util.Random;
 
 public class Aufg_1_3_Plateau {
 
-	/** pr¸ft, wie lang in einem aufsteigend oder absteigend sortierten Feld
-	 *  das l‰ngste Plateau ist. 
+	/** pr√ºft, wie lang in einem aufsteigend oder absteigend sortierten Feld
+	 *  das l√§ngste Plateau ist.
 	 *  
 	 *  Ein Plateau ist eine Folge von aufeinander folgenden
 	 *  Elementen mit gleichem Wert.
 	 *  
 	 *    @param a  sortiertes Feld
-	 *    @return   L‰nge des l‰ngsten Plateaus
+	 *    @return   L√§nge des l√§ngsten Plateaus
 	 */
 	public static int plateauLength(int[] a) {
 		// TODO
@@ -28,22 +28,22 @@ public class Aufg_1_3_Plateau {
 
 	public static void main(String[] args) {
 		int[] f1 = {1, 2, 2, 3, 4, 4, 4, 4, 5, 5, 6 };
-		System.out.println("L‰ngstes Plateau in f1: " + plateauLength(f1));
+		System.out.println("L√§ngstes Plateau in f1: " + plateauLength(f1));
 		System.out.println("  erwartet: 4");
 		System.out.println();
 		
 		int[] f2 = {9, 9, 9, 9, 9, 4, 4, 4, 3, 2, 2, 2, 2 };
-		System.out.println("L‰ngstes Plateau in f2: " + plateauLength(f2));
+		System.out.println("L√§ngstes Plateau in f2: " + plateauLength(f2));
 		System.out.println("  erwartet: 5");
 		System.out.println();
 		
 		int[] f3 = {1, 2, 3, 4, 5, 6 };
-		System.out.println("L‰ngstes Plateau in f3: " + plateauLength(f3));
+		System.out.println("L√§ngstes Plateau in f3: " + plateauLength(f3));
 		System.out.println("  erwartet: 1");
 		System.out.println();
 		
 		int[] f4 = {1, 1, 1, 1};
-		System.out.println("L‰ngstes Plateau in f4: " + plateauLength(f4));
+		System.out.println("L√§ngstes Plateau in f4: " + plateauLength(f4));
 		System.out.println("  erwartet: 4");
 		System.out.println();
 		
@@ -56,12 +56,12 @@ public class Aufg_1_3_Plateau {
 		}
 		Arrays.sort(f5);
 		
-		System.out.println("Feldl‰nge f5:" + f5.length);
-		System.out.println("L‰ngstes Plateau in f5: " + plateauLength(f5));
+		System.out.println("Feldl√§nge f5:" + f5.length);
+		System.out.println("L√§ngstes Plateau in f5: " + plateauLength(f5));
 		System.out.println();
 		
 		int[] f6 = {2, 2, 1, 3, 1};
-		System.out.println("L‰ngstes Plateau in f6: " + plateauLength(f6));
+		System.out.println("L√§ngstes Plateau in f6: " + plateauLength(f6));
 		System.out.println("  erwartet: 2");
 		System.out.println();
 		
