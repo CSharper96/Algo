@@ -8,12 +8,21 @@ import java.util.TreeSet;
 public class Aufg_1_4_Enthalten {
 
 	public static boolean alleEnthalten(long[] a1, long[] a2) {
-		// TODO
-		// TODO
-		// TODO
-		// TODO
-		// TODO		
-		return false;		// TODO
+		long tmp = 0;
+		for (long l1: a1)
+		{
+			for(long l2 : a2)
+			{
+				if(l1 == l2)
+				{
+					tmp++;
+					break;
+				}
+			}
+		}
+		if(a1.length == tmp)
+			return true;
+		else return false;
 	}
 	
 	

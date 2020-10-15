@@ -14,7 +14,7 @@ public class Aufg_1_3_Plateau {
 	 *    @param a  sortiertes Feld
 	 *    @return   Länge des längsten Plateaus
 	 */
-	public static int plateauLength(int[] a) {
+	public static int plateauLength(int[] value) {
 		// TODO
 		// TODO
 		// TODO
