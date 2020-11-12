@@ -1,0 +1,50 @@
+Aufgabe 5.1
+a)
+
+Heapsort:
+n =       100      0,166 msec.
+n =      1000      1,199 msec.
+n =     10000      2,958 msec.
+n =    100000     25,681 msec.
+
+Quicksort:
+n =       100      0,128 msec.
+n =      1000      0,704 msec.
+n =     10000      1,333 msec.
+n =    100000     17,262 msec.
+
+Mergesort:
+n =       100      0,095 msec. drschn.D.: 0,00095ms
+n =      1000      1,074 msec. drschn.D.: 0,001074ms
+n =     10000      4,003 msec. drschn.D.: 0,0004003ms
+n =    100000     29,740 msec. drschn.D.: 0,0002974ms	=> 0,000680425ms (0,680425ns)
+
+Insertionsort:
+n =       100      0,240 msec.
+n =      1000      7,309 msec.
+n =     10000     54,556 msec.
+n =    100000   1887,193 msec.
+
+Selectionsort:
+n =       100      0,147 msec. drschn.D.: 0,00147ms
+n =      1000      3,335 msec. drschn.D.: 0,003335ms (Faktor 2,2)
+n =     10000     73,492 msec. drschn.D.: 0,0073492ms (Faktor 2,2)
+n =    100000   4354,847 msec. drschn.D.: 0,04354847ms (Faktor 6)		=> 0,013926ms
+
+Bubblesort:
+n =       100      3,062 msec.
+n =      1000     10,263 msec.
+n =     10000    259,518 msec.
+n =    100000  32497,986 msec.
+
+b)
+
+Selectionsort:	O(n^2)
+// Anzahl der Schritte = (n*(n+1))/2
+// Annahme: 0,01ms pro schritt
+n =   1000000	=>	~49999500 msec.
+n =  10000000	=>	~4999995000 msec.
+
+Mergesort:		O(n*log2(n))
+n =   1000000	=>	~340 msec.
+n =  10000000	=>	~4082 msec.
