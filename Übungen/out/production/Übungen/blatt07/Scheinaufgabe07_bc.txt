@@ -1,0 +1,14 @@
+Aufgabe 7.3
+
+b)
+
+insertIter(v):
+	=> Komplexität von O(n)
+
+extractMin():
+	=> Komplexität von O(n)
+	
+c)
+
+equals(SearchTree tree)
+	=> Komplexität von O(n)
