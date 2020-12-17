@@ -11,4 +11,4 @@ extractMin():
 c)
 
 equals(SearchTree tree)
-	=> Komplexität von O(n)
+	=> Komplexität von O(n * log(n))
